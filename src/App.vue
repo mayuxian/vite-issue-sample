@@ -1,12 +1,17 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
-  <div
+  <!-- 指定到此处,正常显示 -->
+  <!-- <div
     id="teleport"
     class="teleport"
     style="height: 100px; background: gray"
-  ></div>
-  <div  style="position: relative">
+  ></div> -->
+  <!-- issue:若指定teleport的锚点到modal-button(内部使用teleport)的父级节点,
+  则会报以下错,这个是否属于错误,是否会完善修复吗?
+  runtime-dom.esm-bundler.js:30 Uncaught (in promise) TypeError: Cannot read property 'parentNode' of null
+  at parentNode (runtime-dom.esm-bundler.js:30) -->
+  <div id="teleport" class="teleport"  style="position: relative">
+  <!-- <div style="position: relative"> -->
     <h3>Tooltips with Vue 3 Teleport</h3>
     <div>
       <modal-button></modal-button>
